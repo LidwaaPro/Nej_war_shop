@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nej War - Galerie & Boutique d'Art Contemporain</title>
+    <meta name="description"
+        content="Découvrez et achetez les créations originales de Nej War. Des tableaux vibrants et modernes qui subliment votre espace.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Phosphor Icons for modern SVG icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">Nej_War<span>.</span></a>
+        <nav class="nav-links">
+            <a href="#galerie">Galerie</a>
+            <a href="#savoir-faire">Fabrication</a>
+            <a href="#apropos">L'Artiste</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-btn" id="cartOpenBtn" aria-label="Ouvrir le panier">
+                <i class="ph ph-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <button class="close-menu" id="mobileMenuCloseBtn"><i class="ph ph-x"></i></button>
+        <nav class="mobile-nav-links">
+            <a href="#galerie" class="mobile-link">Galerie</a>
+            <a href="#savoir-faire" class="mobile-link">Fabrication</a>
+            <a href="#apropos" class="mobile-link">L'Artiste</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Votre Panier</h2>
+            <button class="close-cart" id="cartCloseBtn"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p class="empty-cart">Votre panier est vide.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total</span>
+                <span id="cartTotal">0 €</span>
+            </div>
+            <button class="checkout-btn">Commander</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal-text">L'Art qui parle <br><span class="gradient-text">à votre âme</span></h1>
+            <p class="hero-subtitle reveal-text delay-1">Plongez dans l'univers de Nej War. Des œuvres uniques pour des
+                espaces exceptionnels.</p>
+            <a href="#galerie" class="btn-primary reveal-text delay-2">Explorer la collection</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="gallery-section">
+        <div class="section-header">
+            <h2>Collection Exclusives</h2>
+            <p>Pièces uniques, signées et authentifiées.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Items injected by JS -->
+        </div>
+    </section>
+
+    <!-- Savoir-Faire Section -->
+    <section id="savoir-faire" class="savoir-faire-section">
+        <div class="sf-container">
+            <div class="section-header">
+                <h2>Authenticité & <span class="gradient-text">Fabrication</span></h2>
+                <p>Explorez le processus créatif où la matière brute devient une œuvre d’expression unique, alliant
+                    technique, sensibilité et innovation.</p>
+            </div>
+
+            <div class="sf-grid">
+                <div class="sf-card">
+                    <i class="ph ph-hand-swipe"></i>
+                    <h3>Façonnage à la Main</h3>
+                    <p>"Chaque création est entièrement façonnée à la main, garantissant une maîtrise artisanale et une
+                        attention minutieuse portée aux détails. Le béton ciré et l’encre sont travaillés avec précision
+                        pour révéler toute leur richesse esthétique."</p>
+                </div>
+
+                <div class="sf-card">
+                    <i class="ph ph-drop"></i>
+                    <h3>Technique Mixte</h3>
+                    <p>"Les œuvres résultent d’une combinaison maîtrisée de matériaux et de techniques, notamment
+                        l’acrylique, le béton ciré et l’encre. Cette approche hybride permet de créer des textures
+                        profondes et des compositions visuelles contemporaines."</p>
+                </div>
+
+                <div class="sf-card">
+                    <i class="ph ph-magic-wand"></i>
+                    <h3>Unicité Absolue</h3>
+                    <p>Chaque pièce est conçue comme une œuvre singulière. Les variations de matière, de relief et de
+                        finition rendent chaque création authentique et impossible à reproduire à l’identique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="L'artiste Nej War au travail" loading="lazy">
+                <div class="glass-badge">Création Originale</div>
+            </div>
+            <div class="about-text">
+                <h2>Vision & <br><span class="gradient-text">Inspiration</span></h2>
+                <p>Nej War est née d'une passion ardente pour l'expression abstraite. Chaque coup de pinceau est une
+                    émotion, chaque toile est une histoire qui attend d'être découverte.</p>
+                <p>Mes créations mélangent textures brutes et couleurs vibrantes pour créer des points focaux qui
+                    transforment complètement l'atmosphère d'une pièce.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">Nej_War<span>.</span></a>
+                <p>Création contemporaine, expédition mondiale.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <a href="mailto:contact@nejwar.com">contact@nejwar.com</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nej_war?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                            class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.vinted.fr/member/30747500-nejwar"
+                        target="_blank" rel="noopener noreferrer" aria-label="Vinted" style="display: flex; align-items: center;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                            <path d="M19.316 0c-.258 0-.571.217-1.415.953-.3.108-.627.027-1.008.613-2.15 3.09-3.825 14.648-5.255 17.984-.286-1.444-.885-10.837-1.116-13.41-.028-.477.027-1.076.027-1.43 0-2.368-.516-3.567-2.886-3.567-1.198 0-2.382.436-3.008 1.226-.299.408-.409.708-.409 1.443 0 4.915 1.171 12.973 2.478 18.228C7.132 23.688 8.603 24 9.99 24c.654 0 1.307-.081 2.233-.544 3.212-1.567 4.07-5.84 4.9-9.993.15-.749.899-4.37 1.253-6.275.476-2.6 1.02-5.54 1.347-6.617C19.833.245 19.63 0 19.317 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nej War. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
