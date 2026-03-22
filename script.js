@@ -37,18 +37,8 @@ const paintings = [
     }
 ];
 
-// State
-let cart = [];
-
 // DOM Elements
 const galleryGrid = document.getElementById('galleryGrid');
-const cartOpenBtn = document.getElementById('cartOpenBtn');
-const cartCloseBtn = document.getElementById('cartCloseBtn');
-const cartSidebar = document.getElementById('cartSidebar');
-const cartOverlay = document.getElementById('cartOverlay');
-const cartItemsContainer = document.getElementById('cartItemsContainer');
-const cartTotal = document.getElementById('cartTotal');
-const cartCountElements = document.querySelectorAll('.cart-count');
 
 // Initialize Gallery
 function initGallery() {
@@ -69,10 +59,6 @@ function initGallery() {
                     <span class="art-size">${painting.size}</span>
                     <span class="art-price">${painting.price} €</span>
                 </div>
-                <button class="btn-add" onclick="addToCart(${painting.id})">
-                    <i class="ph ph-shopping-cart-simple"></i>
-                    Ajouter au panier
-                </button>
             </div>
         `;
         
@@ -94,82 +80,7 @@ function initGallery() {
     });
 }
 
-// Cart functionality
-window.addToCart = (id) => {
-    const painting = paintings.find(p => p.id === id);
-    if (!painting) return;
-    
-    // Check if item already in cart
-    const existingItem = cart.find(item => item.id === id);
-    if (!existingItem) {
-        cart.push(painting);
-        updateCartUI();
-        
-        // Show notification or bounce effect on cart icon
-        cartOpenBtn.style.transform = 'scale(1.2)';
-        setTimeout(() => {
-            cartOpenBtn.style.transform = 'scale(1)';
-        }, 300);
-    } else {
-        alert("Cette œuvre unique est déjà dans votre panier.");
-    }
-};
 
-window.removeFromCart = (id) => {
-    cart = cart.filter(item => item.id !== id);
-    updateCartUI();
-};
-
-function updateCartUI() {
-    // Update count
-    cartCountElements.forEach(el => el.textContent = cart.length);
-    
-    // Update items
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="empty-cart">Votre panier est vide.</p>';
-        cartTotal.textContent = '0 €';
-        return;
-    }
-    
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
-    
-    cart.forEach(item => {
-        total += item.price;
-        
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" class="cart-item-img">
-            <div class="cart-item-info">
-                <div class="cart-item-title">${item.title}</div>
-                <div class="cart-item-price">${item.price} €</div>
-            </div>
-            <button class="remove-item" onclick="removeFromCart(${item.id})">
-                <i class="ph ph-trash"></i>
-            </button>
-        `;
-        cartItemsContainer.appendChild(cartItem);
-    });
-    
-    cartTotal.textContent = `${total} €`;
-}
-
-// Sidebar toggles
-cartOpenBtn.addEventListener('click', () => {
-    cartSidebar.classList.add('active');
-    cartOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-const closeCart = () => {
-    cartSidebar.classList.remove('active');
-    cartOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-};
-
-cartCloseBtn.addEventListener('click', closeCart);
-cartOverlay.addEventListener('click', closeCart);
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
@@ -187,17 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle checkout button
-    const checkoutBtn = document.querySelector('.checkout-btn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                alert("Votre panier est vide.");
-            } else {
-                alert("Redirection vers la page de paiement sécurisé...");
-            }
-        });
-    }
+
 
     // Mobile Menu toggles
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
