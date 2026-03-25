@@ -2,38 +2,43 @@
 const paintings = [
     {
         id: 1,
-        title: "Calligraphie Dorée",
+        title: "Paix (Salam)",
         price: 70,
-        size: "Cadre blanc - Peinture dorée",
-        image: "assets/media__1773932371421.jpg"
+        size: "50x70 cm - Béton ciré sur toile",
+        description: "Une ode visuelle à la sérénité. Modulée entièrement en béton ciré sur toile, la texture brute de l'œuvre donne à la calligraphie « Salam » (Paix) une dimension tactile et un relief saisissant, invitant à la contemplation et au calme intérieur.",
+        image: "assets/media__1774410225146.jpg"
     },
     {
         id: 2,
-        title: "Mouvement Fluide",
-        price: 70,
-        size: "Acrylique avec texture",
-        image: "assets/media__1773932371450.jpg"
+        title: "Harmonie Divine",
+        price: 65,
+        size: "50x70 cm - Peinture et béton ciré sur toile",
+        description: "Cette création marie l'élégance de la calligraphie à la puissance de la matière. La silhouette noire de l'inscription sacrée contraste harmonieusement avec des vagues subtiles en béton ciré qui encadrent la toile, apportant lumière et profondeur absolue.",
+        image: "assets/media__1774410225153.jpg"
     },
     {
         id: 3,
-        title: "L'Essence Minimaliste",
-        price: 70,
-        size: "Calligraphie encadrée",
-        image: "assets/media__1773932371453.jpg"
+        title: "Composition Libre",
+        price: 40,
+        size: "50x70 cm - Acrylique sur toile",
+        description: "Une œuvre mariant l'esthétique contemporaine et l'art des lettres arabes. Travaillée à l'acrylique sur un fond délicatement nuancé, elle offre une dynamique asymétrique audacieuse qui capte le regard et s'intègre parfaitement dans les espaces modernes.",
+        image: "assets/media__1774410225164.jpg"
     },
     {
         id: 4,
-        title: "Élévation",
-        price: 70,
-        size: "Texture blanche",
-        image: "assets/media__1773932371466.jpg"
+        title: "Élégance Encadrée",
+        price: 50,
+        size: "20x30 cm (encadré) - Bois, béton ciré et acrylique",
+        description: "Une présentation raffinée où l'utilisation du bois et de la peinture acrylique est sublimée par une finition au béton ciré. Une seule lettre calligraphiée en noir intense devient la pièce maîtresse intemporelle pour habiller élégamment vos murs.",
+        image: "assets/media__1774410225169.jpg"
     },
     {
         id: 5,
-        title: "Connexion Artistique",
-        price: 70,
-        size: "Technique mixte",
-        image: "assets/media__1773932371492.jpg"
+        title: "Force Géométrique",
+        price: 35,
+        size: "30x40 cm (encadré) - Peinture sur bois",
+        description: "Empruntant les codes géométriques du style Kufic, cette pièce peinte sur bois et présentée dans son cadre offre un contraste chaleureux grâce à son fond nuancé et ocre. Une composition épurée qui ancre spirituellement et esthétiquement votre décoration.",
+        image: "assets/media__1774410682782.jpg"
     }
 ];
 
@@ -55,6 +60,7 @@ function initGallery() {
             </div>
             <div class="art-info">
                 <h3 class="art-title">${painting.title}</h3>
+                <p class="art-description">${painting.description}</p>
                 <div class="art-details">
                     <span class="art-size">${painting.size}</span>
                     <span class="art-price">${painting.price} €</span>

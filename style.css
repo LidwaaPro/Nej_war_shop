@@ -297,6 +297,18 @@ h1, h2, h3, h4 {
     margin-bottom: 0.5rem;
 }
 
+.art-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .art-details {
     display: flex;
     justify-content: space-between;
