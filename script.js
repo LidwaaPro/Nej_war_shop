@@ -3,8 +3,8 @@ const paintings = [
     {
         id: 1,
         title: "Paix (Salam)",
-        price: 70,
-        size: "50x100 cm - Béton ciré sur toile",
+        price: 100,
+        size: "50x70 cm - Béton ciré sur toile",
         description: "Une ode visuelle à la sérénité. Modulée entièrement en béton ciré sur toile, la texture brute de l'œuvre donne à la calligraphie « Salam » (Paix) une dimension tactile et un relief saisissant, invitant à la contemplation et au calme intérieur.",
         image: "assets/media__1774410225146.jpg"
     },
